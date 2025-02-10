@@ -28,8 +28,8 @@ class GarantiaProducto(models.Model):
     def _compute_warranty_date(self):
         for record in self:
             if record.purchase_date:
-                # Sumamos 2 años (730 días) directamente a la fecha de compra
-                record.warranty_date = fields.Date.from_string(record.purchase_date) + timedelta(days=730)
+                # Sumamos 2 años (1095 días) directamente a la fecha de compra
+                record.warranty_date = fields.Date.from_string(record.purchase_date) + timedelta(days=1095)
             else:
                 # Si no hay fecha de compra, el campo se deja vacío
                 record.warranty_date = False
